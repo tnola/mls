@@ -8,7 +8,7 @@ $settings = array(
 );
 foreach($settings as $setting => $value):
 	$_SETTINGS[$setting] = $value;
-	echo 'Set ' . $setting . '<br>';
+	// echo 'Set ' . $setting . '<br>';
 endforeach;
 
 ?>
