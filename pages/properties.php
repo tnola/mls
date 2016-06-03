@@ -9,7 +9,7 @@
 		box-shadow: 0 0 5px rgba(0,0,0,.3);
 		color: #333;
 		position: fixed;
-		top: /*100px*/50%;
+		top: /*100px*/ 0;
 		left: -520px;
 		width: 500px;
 		-webkit-transition-duration: 0.3s;
