@@ -16,9 +16,16 @@ require_once('includes/loader.php');
 		}
 		#container {
 			height: calc(100% - 100px);
+			display: flex;
+		}
+		#header {
+			height: 100px;
 		}
 	</style>
 </head>
 <body>
-	<div style="height: 100px;"><button>LOL SUP</button></div>
+	<div id="header">
+		This is where were putting our header and nav items
+	</div>
+
 	<div id="container">

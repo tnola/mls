@@ -4,43 +4,40 @@
 		width: 100%;
 	}
 
-	#slideout {
-		background: #fff;
-		box-shadow: 0 0 5px rgba(0,0,0,.3);
-		color: #333;
-		position: fixed;
-		top: /*100px*/ 0;
-		left: -520px;
-		width: 500px;
-		-webkit-transition-duration: 0.3s;
-		-moz-transition-duration: 0.3s;
-		-o-transition-duration: 0.3s;
-		transition-duration: 0.3s;
-	}
-	#slideout form {
-		display: block;
-		padding: 20px;
-	}
-	#slideout textarea {
-		display:block;
-		height: 100px;
-		margin-bottom: 6px;
-		width: 250px;
-	}
-	#slideout.on {
-		left: 0;
-	}
+<?
+	$contentArray['column'] = '.twoContent { width: 50%; height: 100%; }';
+	$contentArray['row'] = '.twoContent { width: 100%; height 50%; }';
+
+	echo $contentArray[$_SETTINGS['properties']['display']['layout']];
+?>
 
 </style>
 
-<div id="map"></div>
+<?
+/* this is where we begin setting content into variables so we can determine placement easily */
 
-<div id="slideout">
-    <form>
-      <textarea class="form-control"></textarea>
-      <input class="btn btn-primary" type="submit" value="Post feedback"></input>
-    </form>
-  </div>
+/* here is where we  start the map */
+unset($html);
+$html = '<div class="twoContent">';
+$html .= '	<div id="map"></div>';
+$html .= '</div>';
+$contentArray['map'] = $html;
+
+/* here is where we start the properties pane */
+unset($html);
+$html = '<div class="twoContent">';
+$html .= '	<p>Here is where we\'ll list some preoprties</p>';
+$html .= '</div>';
+$contentArray['property_pane'] = $html;
+
+
+/* here is where we determine what goes where */
+$order = $_SETTINGS['properties']['display']['order'];
+for($i=1; $i<=count($order); $i++):
+	echo $contentArray[$order[$i]];
+endfor;
+
+?>
 
 
 <script>
@@ -51,9 +48,5 @@
 			zoom: 8
 		});
 	}
-
-$('button').click(function(){
-	$('#slideout').toggleClass('on');
-});
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<?=$_SETTINGS['google_maps_api'];?>&callback=initMap" async defer></script>
