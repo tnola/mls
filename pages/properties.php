@@ -6,7 +6,7 @@
 
 <?
 	$contentArray['column'] = '.twoContent { width: 50%; height: 100%; }';
-	$contentArray['row'] = '.twoContent { width: 100%; height 50%; }';
+	$contentArray['row'] = '.twoContent { width: 100%; height: 50%; }';
 
 	echo $contentArray[$_SETTINGS['properties']['display']['layout']];
 ?>
