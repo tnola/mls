@@ -3,14 +3,11 @@
 		height: 100%;
 		width: 100%;
 	}
-
 <?
 	$contentArray['column'] = '.twoContent { width: 50%; height: 100%; }';
-	$contentArray['row'] = '.twoContent { width: 100%; height: 50%; }';
-
+	$contentArray['row'] = '#container {display: block !important;} .twoContent { width: 100%; height: 50%; }';
 	echo $contentArray[$_SETTINGS['properties']['display']['layout']];
 ?>
-
 </style>
 
 <?
@@ -26,7 +23,7 @@ $contentArray['map'] = $html;
 /* here is where we start the properties pane */
 unset($html);
 $html = '<div class="twoContent">';
-$html .= '	<p>Here is where we\'ll list some preoprties</p>';
+$html .= 'Here is where we\'ll list some preoprties';
 $html .= '</div>';
 $contentArray['property_pane'] = $html;
 
