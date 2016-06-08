@@ -6,7 +6,11 @@ require_once('includes/loader.php');
 <head>
 	<title></title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+
+
 	<style type="text/css">
 		html {
 			height: 100%;
@@ -36,6 +40,7 @@ require_once('includes/loader.php');
 			width:50%;
 			height: 100%;
 			vertical-align: middle;
+			font-family: 'Monoton', cursive;
 		}
 	</style>
 </head>
